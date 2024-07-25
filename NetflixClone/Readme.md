@@ -16,10 +16,9 @@ Welcome to the **Netflix Clone** repository! This project is a simplified UI clo
 - **Jetpack Compose:** Use modern Android UI toolkit for a declarative UI.
 
 ## Screenshots
-![Home Screen](![image](https://github.com/user-attachments/assets/5a5448fe-8341-44ba-bd4a-06a9ed93befe)
+![Home Screen](screenshots/screenshot/image.png)
 )
-![Detail View](![image](https://github.com/user-attachments/assets/7195e046-f4c2-4a74-b75e-89fe804fa0c0)
-)
+![Detail View](screenshots/screenshot/image_001.png)
 
 ## Installation
 To get started with the Netflix Clone, follow these steps:
