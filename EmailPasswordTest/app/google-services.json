@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295289989390",
+    "project_id": "emailpasswordtest-3012e",
+    "storage_bucket": "emailpasswordtest-3012e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295289989390:android:e204d7af2d84b125224f5f",
+        "android_client_info": {
+          "package_name": "com.example.emailpasswordtest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6NHgyYve1xc-jbLwyRellhBcG3hlEilk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
