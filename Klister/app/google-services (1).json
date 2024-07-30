@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "627980649502",
+    "project_id": "klister",
+    "storage_bucket": "klister.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627980649502:android:a706ab6289d94ed9921a0f",
+        "android_client_info": {
+          "package_name": "com.example.klister"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA53-AwITy4huiS4-j0iy-tOZVFHYytu_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
