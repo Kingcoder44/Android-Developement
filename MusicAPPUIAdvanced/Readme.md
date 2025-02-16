@@ -1,6 +1,3 @@
-Here is the updated README code with improvements:  
-
-```markdown
 # 🎵 MusicApp UI Advanced
 
 A modern and interactive **Music App UI** built using **Jetpack Compose** in Android. This app features a sleek design with a **bottom navigation bar, navigation drawer, categorized music sections, and smooth UI animations**.
