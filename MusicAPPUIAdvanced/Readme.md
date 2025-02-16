@@ -42,7 +42,8 @@ A modern and interactive **Music App UI** built using **Jetpack Compose** in And
 
 ## 📥 Download APK
 
-📌 You can [**Download the latest APK**](https://github.com/Kingcoder44/MusicApp-UI-Advanced/releases/latest) and install it directly on your Android device.
+📌 You can [**Download the latest APK**](https://github.com/Kingcoder44/Android-Developement/releases/latest) and install it directly on your Android device.
+
 
 ---
 
@@ -51,9 +52,6 @@ A modern and interactive **Music App UI** built using **Jetpack Compose** in And
 | Home Screen | Browse Screen | Library Screen |
 | ----------- | ------------- | -------------- |
 | ![Home](link_to_home_screen) | ![Browse](link_to_browse_screen) | ![Library](link_to_library_screen) |
-
-> Replace `link_to_home_screen`, `link_to_browse_screen`, and `link_to_library_screen` with actual image links.
-
 ---
 
 ## 🛠 Tech Stack
