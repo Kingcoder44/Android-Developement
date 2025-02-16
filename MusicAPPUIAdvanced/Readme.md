@@ -42,7 +42,7 @@ A modern and interactive **Music App UI** built using **Jetpack Compose** in And
 
 ## 📥 Download APK
 
-📌 You can [**Download the latest APK**](https://github.com/your-username/MusicApp-UI-Advanced/releases/latest) and install it directly on your Android device.
+📌 You can [**Download the latest APK**](https://github.com/Kingcoder44/MusicApp-UI-Advanced/releases/latest) and install it directly on your Android device.
 
 ---
 
