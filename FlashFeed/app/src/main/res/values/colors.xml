@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray">#2E2E2E</color>
+    <color name="off_white">#F8F9FA</color>
+    <color name="purple">#7556A0</color>
+    <color name="yellow">#F4D03F</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="deep_purple">#5E4389</color> <!-- Primary color (soft & rich) -->
+    <color name="warm_gold">#E1B12C</color> <!-- Highlights (not too bright) -->
+    <color name="charcoal_black">#181818</color> <!-- Background (less contrast, easy on eyes) -->
+    <color name="soft_white">#EAEAEA</color>
+</resources>
