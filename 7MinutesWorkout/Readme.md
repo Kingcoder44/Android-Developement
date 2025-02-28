@@ -1,6 +1,3 @@
-### **README.md**  
-
-```md
 # 🏋️‍♂️ 7-Minute Workout App  
 
 A simple **7-minute workout** app designed to help users stay fit with quick and effective exercises. The app includes **9-11 exercises**, a **BMI calculator**, and a **history feature** to track progress.  
