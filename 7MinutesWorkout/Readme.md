@@ -1,7 +1,3 @@
-Here’s the **README.md** file with everything properly formatted for GitHub, including Git instructions, enhancements, and licensing.  
-
----
-
 ### **README.md**  
 
 ```md
