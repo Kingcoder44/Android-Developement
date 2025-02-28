@@ -1,4 +1,4 @@
-### **README.md**  
+## **README.md**  
 
 ```md
 # 🏋️‍♂️ 7-Minute Workout App  
