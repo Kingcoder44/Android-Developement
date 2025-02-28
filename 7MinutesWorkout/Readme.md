@@ -44,7 +44,7 @@ A simple **7-minute workout** app designed to help users stay fit with quick and
 ### ✅ Clone the Repository  
 1. Open a terminal and run:  
    ```bash
-   git clone https://github.com/your-username/7-minute-workout-app.git
+   git clone https://github.com/Kingcoder44/Android-Developemnet/7-minute-workout-app.git
    cd 7-minute-workout-app
    ```
    
@@ -88,13 +88,7 @@ This project is licensed under the **MIT License**.
 ---
 
 ### 🎯 Stay Fit, Stay Motivated! 💪  
-```
 
 ---
+```
 
-### **Instructions**  
-- **Copy-paste** this content into your **README.md** file.  
-- **Replace** `https://github.com/your-username/7-minute-workout-app.git` with your actual GitHub repository URL.  
-- **Add screenshots** where indicated for a better presentation.  
-
-Now you're all set to push this to your repository! 🚀
