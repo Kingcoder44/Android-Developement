@@ -1,0 +1,41 @@
+package com.example.a7minutesworkout
+
+class ExerciseModel(
+    private var id: Int,
+    private var name : String,
+    private var image: Int,
+    private var isCompleted :Boolean,
+    private var isSelected: Boolean
+){
+    fun getId() : Int{
+        return id;
+    }
+    fun setId(id :Int) {
+        this.id = id
+    }
+    fun getImage() : Int{
+        return image
+    }
+    fun setImage(id : Int){
+        this.id=id
+    }
+    fun getName() : String{
+        return name
+    }
+    fun setName(name : String){
+        this.name = name
+    }
+    fun getisCompleted() : Boolean{
+        return isCompleted
+    }
+    fun setIsCompleted(value : Boolean){
+        this.isCompleted = value
+    }
+
+    fun getisSelected() : Boolean{
+        return isSelected
+    }
+    fun setIsSelected(value : Boolean){
+        this.isSelected = value
+    }
+}
