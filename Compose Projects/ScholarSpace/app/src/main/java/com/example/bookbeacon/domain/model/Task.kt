@@ -1,7 +1,10 @@
 package com.example.bookbeacon.domain.model
 
 import androidx.compose.foundation.MutatePriority
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity
 data class Task(
 
     val title :String,
@@ -10,6 +13,7 @@ data class Task(
     val priority: Int,
     val relatedToSubject : String,
     val isComplete : Boolean,
-    val taskId : Int,
+    @PrimaryKey(autoGenerate = true)
+    val taskId : Int? = null,
     val taskSubjectId : Int
 )

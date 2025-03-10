@@ -51,12 +51,30 @@ import com.example.bookbeacon.ui.presentation.component.TaskDatePicker
 import com.example.bookbeacon.ui.presentation.theme.Red
 import com.example.bookbeacon.util.Priority
 import com.example.bookbeacon.util.changeMillisToDateString
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.launch
 import java.time.Instant
 
+data class TaskScreenNavArgs(
+    val TaskId : Int?,
+    val subjectId: Int?
+)
+
+@Destination(navArgsDelegate = TaskScreenNavArgs::class)
+@Composable
+fun TaskScreenRoute(
+    navigator: DestinationsNavigator
+){
+    TaskScreen(
+        onBackButtonClick = {navigator.navigateUp()}
+    )
+}
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TaskScreen()
+private fun TaskScreen(
+    onBackButtonClick: () -> Unit
+)
 {
     var deleteDialog by rememberSaveable {mutableStateOf(false)}
 
@@ -114,7 +132,7 @@ fun TaskScreen()
                 isTaskExist = true,
                 isComplete = false,
                 checkBoxBorderColor = Red,
-                onBackButtonClick = {},
+                onBackButtonClick = onBackButtonClick,
                 onCheckBoxClick = {},
                 onDeleteButtonClick = {deleteDialog=true}
             )

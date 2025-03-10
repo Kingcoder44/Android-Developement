@@ -48,10 +48,46 @@ import com.example.bookbeacon.ui.presentation.component.CountCard
 import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.studySessionsList
 import com.example.bookbeacon.ui.presentation.component.tasksList
+import com.example.bookbeacon.ui.presentation.destinations.TaskScreenRouteDestination
+import com.example.bookbeacon.ui.presentation.task.TaskScreenNavArgs
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
+data class SubjectScreenNavArgs(
+    val subjectId : Int
+)
+
+@Destination(navArgsDelegate = SubjectScreenNavArgs::class)
+@Composable
+fun SubjectScreenRoute(
+    navigator: DestinationsNavigator
+)
+{
+    SubjectScreen(
+        onBackIconClicked = { navigator.navigateUp() },
+        onAddTaskButtonClciked = {
+            val navArg = TaskScreenNavArgs(
+                TaskId = null,
+                subjectId = -1
+            )
+            navigator.navigate(TaskScreenRouteDestination(navArgs = navArg))
+        },
+        onTaskCardClicked = {
+            taskId ->
+            val navArg = TaskScreenNavArgs(
+                TaskId = taskId,
+                subjectId = null
+            )
+            navigator.navigate(TaskScreenRouteDestination(navArgs = navArg)) }
+    )
+}
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SubjectScreen()
+private fun SubjectScreen(
+    onBackIconClicked: () -> Unit,
+    onAddTaskButtonClciked: ()->Unit,
+    onTaskCardClicked : (Int?)->Unit
+)
 {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     val listState = rememberLazyListState()
@@ -95,14 +131,14 @@ fun SubjectScreen()
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = { topAppBar(
             title = "English",
-            onBackIconClicked = {},
+            onBackIconClicked = onBackIconClicked,
             onDeleteIconClicked = {isDeleteSubjectDialogOpen = true},
             onEditIconClicked = {isEditSubjectOpen=true},
             scrollBehavior = scrollBehavior
         ) },
         floatingActionButton = {
             ExtendedFloatingActionButton(
-                onClick = {},
+                onClick = onAddTaskButtonClciked,
                 icon = { Icon(imageVector = Icons.Default.Add, contentDescription = "Add new task.") },
                 text =  { Text("Add Task") },
                 expanded = isFabExtended,
@@ -113,12 +149,15 @@ fun SubjectScreen()
         paddingValue->
         LazyColumn(
             state = listState,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
                 .padding(paddingValue)
         ){
             item{
             subjectOverviewSection(
-                modifier = Modifier.fillMaxWidth().padding(12.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(12.dp),
                 studiedHours = "10",
                 goalHours = "15",
                 progress = 0.75f
@@ -128,7 +167,7 @@ fun SubjectScreen()
                 sectionTitle = "UPCOMING TASKS", tasks = tasks,
                 emptyListText = "You don't have any upcoming tasks.\nClick the + button in subject screen to add new task.",
                 onCheckboxClick = {},
-                onTaskCardClick = {}
+                onTaskCardClick = onTaskCardClicked
 
             )
 
@@ -136,7 +175,7 @@ fun SubjectScreen()
                 sectionTitle = "COMPLETED TASKS", tasks = tasks,
                 emptyListText = "You don't have any completed task tasks.\nClick the checkbox to mark completetion of task.",
                 onCheckboxClick = {},
-                onTaskCardClick = {}
+                onTaskCardClick = onTaskCardClicked
 
             )
             studySessionsList(

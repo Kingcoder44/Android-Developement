@@ -38,11 +38,22 @@ import com.example.bookbeacon.subjects
 import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.SubjectListBottomSheet
 import com.example.bookbeacon.ui.presentation.component.studySessionsList
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.launch
 
+@Destination
+@Composable
+fun SessionScreenRoute(navigator: DestinationsNavigator){
+    SessionScreen(
+        onBackButtonClick = {navigator.navigateUp() }
+    )
+}
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SessionScreen(){
+private fun SessionScreen(
+    onBackButtonClick: () -> Unit
+){
     var deleteDialog by rememberSaveable {mutableStateOf(false)}
     var isBottomSheetOpen by rememberSaveable { mutableStateOf(false) }
     val bottomSheetState = rememberModalBottomSheetState()
@@ -69,7 +80,7 @@ fun SessionScreen(){
     )
 
     Scaffold(
-        topBar = { SessionScreenTopBar(onBackButtonClick = {})}
+        topBar = { SessionScreenTopBar(onBackButtonClick = onBackButtonClick)}
     ){
         paddingValues ->
             LazyColumn(

@@ -44,14 +44,53 @@
     import com.example.bookbeacon.domain.model.Task
     import com.example.bookbeacon.subjects
     import com.example.bookbeacon.tasks
+    import com.example.bookbeacon.ui.presentation.Subject.SubjectScreenNavArgs
+    import com.example.bookbeacon.ui.presentation.Subject.SubjectScreenRoute
     import com.example.bookbeacon.ui.presentation.component.AddSubjectDialog
     import com.example.bookbeacon.ui.presentation.component.DeleteDialog
     import com.example.bookbeacon.ui.presentation.component.studySessionsList
     import com.example.bookbeacon.ui.presentation.component.tasksList
+    import com.example.bookbeacon.ui.presentation.destinations.SessionScreenRouteDestination
+    import com.example.bookbeacon.ui.presentation.destinations.SubjectScreenRouteDestination
+    import com.example.bookbeacon.ui.presentation.destinations.TaskScreenRouteDestination
+    import com.example.bookbeacon.ui.presentation.task.TaskScreenNavArgs
     import com.example.studysmart.presentation.components.SubjectCard
+    import com.ramcosta.composedestinations.annotation.Destination
+    import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+
+    @Destination(start = true)
+    @Composable
+    fun DashBoardScreenRoute(
+        navigator : DestinationsNavigator
+    ){
+        DaboardScreen(
+            onSubjectCardClick = {
+                subjectId->
+                subjectId?.let{
+                    val navArg = SubjectScreenNavArgs(subjectId = subjectId)
+                    navigator.navigate(SubjectScreenRouteDestination(navArg))
+                }
+            },
+            onTaskCardClick = {
+                taskId ->
+                val navArg = TaskScreenNavArgs(
+                    TaskId = taskId,
+                    subjectId = null
+                )
+                navigator.navigate(TaskScreenRouteDestination(navArgs = navArg))
+            }   ,
+            onStartSessionButtonClick = {
+                navigator.navigate(SessionScreenRouteDestination())
+            }
+        )
+    }
 
     @Composable
-    fun DaboardScreen(){
+    private fun DaboardScreen(
+        onSubjectCardClick : (Int?)->Unit,
+        onTaskCardClick : (Int?)->Unit,
+        onStartSessionButtonClick: ()->Unit
+    ){
         var isAddSubjectOpen by rememberSaveable { mutableStateOf(false) }
         var isDeleteDialogOpen by rememberSaveable { mutableStateOf(false) }
         var subjectName by remember{ mutableStateOf("") }
@@ -101,12 +140,13 @@
                         subjectList = subjects,
                         onAddIconClicked = {
                             isAddSubjectOpen = true
-                        }
+                        },
+                        onSubjectCardClick = onSubjectCardClick
                     )
                 }
                 item{
                     Button(
-                        onClick = {},
+                        onClick = onStartSessionButtonClick,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 48.dp, vertical = 20.dp)
@@ -118,7 +158,7 @@
                     sectionTitle = "UPCOMING TASKS", tasks = tasks,
                     emptyListText = "You don't have any upcoming tasks.\nClick the + button to add new task.",
                     onCheckboxClick = {},
-                    onTaskCardClick = {}
+                    onTaskCardClick = onTaskCardClick
 
                 )
                 studySessionsList(
@@ -176,11 +216,12 @@
         modifier: Modifier,
         subjectList : List<Subject>,
         emptyListText : String = "You have not chosen any subjects.\nClick + button to add new subject.",
-        onAddIconClicked : ()->Unit
+        onAddIconClicked : ()->Unit,
+        onSubjectCardClick: (Int?) -> Unit
     ) {
          Column {
 
-             Row (modifier = Modifier.fillMaxWidth(),
+             Row (modifier = modifier.fillMaxWidth(),
                  verticalAlignment = Alignment.CenterVertically,
                  horizontalArrangement = Arrangement.SpaceBetween)
              {
@@ -219,7 +260,7 @@
                      subject -> SubjectCard(
                         subjectName =  subject.name,
                          gradientColors = subject.colors,
-                         onClick = {}
+                         onClick = {onSubjectCardClick(subject.subjectId)}
                      )
                  }
              }
