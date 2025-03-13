@@ -26,6 +26,7 @@
     import androidx.compose.material3.Text
 
     import androidx.compose.runtime.Composable
+    import androidx.compose.runtime.collectAsState
     import androidx.compose.runtime.getValue
     import androidx.compose.runtime.mutableStateMapOf
     import androidx.compose.runtime.mutableStateOf
@@ -38,6 +39,8 @@
     import androidx.compose.ui.res.painterResource
     import androidx.compose.ui.text.style.TextAlign
     import androidx.compose.ui.unit.dp
+    import androidx.hilt.navigation.compose.hiltViewModel
+    import androidx.lifecycle.compose.collectAsStateWithLifecycle
     import com.example.bookbeacon.R
     import com.example.bookbeacon.ui.presentation.component.CountCard
     import com.example.bookbeacon.domain.model.Subject
@@ -63,6 +66,8 @@
     fun DashBoardScreenRoute(
         navigator : DestinationsNavigator
     ){
+        val viewModel : DashboardVM = hiltViewModel()
+        val state by viewModel.state.collectAsStateWithLifecycle()
         DaboardScreen(
             onSubjectCardClick = {
                 subjectId->
@@ -259,7 +264,7 @@
                  items(subjectList){
                      subject -> SubjectCard(
                         subjectName =  subject.name,
-                         gradientColors = subject.colors,
+                         gradientColors = subject.colors.map{Color(it)},
                          onClick = {onSubjectCardClick(subject.subjectId)}
                      )
                  }

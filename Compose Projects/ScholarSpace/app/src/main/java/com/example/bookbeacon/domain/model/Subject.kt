@@ -13,7 +13,7 @@ import com.example.bookbeacon.ui.presentation.theme.gradient5
 data class Subject(
     val name: String,
     val goalHours: Float, // Corrected from 'goalsHours' to 'goalHours' to match usage
-    val colors: List<Color> ,// Corrected field name from 'color' to 'colors' to match usage
+    val colors: List<Int> ,// Corrected field name from 'color' to 'colors' to match usage
     @PrimaryKey(autoGenerate = true)
     val subjectId :Int? = null
 ) {

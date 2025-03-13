@@ -34,7 +34,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.bookbeacon.subjects
+import com.example.bookbeacon.ui.presentation.Subject.SubjectVM
 import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.SubjectListBottomSheet
 import com.example.bookbeacon.ui.presentation.component.studySessionsList
@@ -45,6 +47,8 @@ import kotlinx.coroutines.launch
 @Destination
 @Composable
 fun SessionScreenRoute(navigator: DestinationsNavigator){
+
+    val viewModel : SessionVM = hiltViewModel()
     SessionScreen(
         onBackButtonClick = {navigator.navigateUp() }
     )
@@ -54,6 +58,7 @@ fun SessionScreenRoute(navigator: DestinationsNavigator){
 private fun SessionScreen(
     onBackButtonClick: () -> Unit
 ){
+
     var deleteDialog by rememberSaveable {mutableStateOf(false)}
     var isBottomSheetOpen by rememberSaveable { mutableStateOf(false) }
     val bottomSheetState = rememberModalBottomSheetState()

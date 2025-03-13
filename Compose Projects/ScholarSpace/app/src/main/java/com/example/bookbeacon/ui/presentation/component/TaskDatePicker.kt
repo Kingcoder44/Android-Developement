@@ -14,40 +14,41 @@ import java.time.ZoneId
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskDatePicker(
-    state : DatePickerState,
-    isOpen : Boolean,
-    confirmButtonText : String = "OK",
-    dismissButton : String = "Cancel",
-    onDismissButtonClicked: ()->Unit,
-    onConfirmButtonClicked : ()->Unit
-){
-    if(isOpen)
-    {
-
+    state: DatePickerState,
+    isOpen: Boolean,
+    confirmButtonText: String = "OK",
+    dismissButtonText: String = "Cancel",
+    onDismissButtonClicked: () -> Unit,
+    onConfirmButtonClicked: (Long?) -> Unit // Pass selected date
+) {
+    if (isOpen) {
         DatePickerDialog(
             onDismissRequest = onDismissButtonClicked,
             confirmButton = {
-                TextButton(onClick = onConfirmButtonClicked){
+                TextButton(
+                    onClick = {
+                        val selectedDateMillis = state.selectedDateMillis
+                        if (selectedDateMillis != null) {
+                            val selectedDate = Instant.ofEpochMilli(selectedDateMillis)
+                                .atZone(ZoneId.systemDefault())
+                                .toLocalDate()
+                            val currentDate = LocalDate.now(ZoneId.systemDefault())
+                            if (selectedDate >= currentDate) {
+                                onConfirmButtonClicked(selectedDateMillis)
+                            }
+                        }
+                    }
+                ) {
                     Text(text = confirmButtonText)
                 }
             },
             dismissButton = {
-                TextButton(onClick = onDismissButtonClicked){
-                    Text(text = dismissButton)
+                TextButton(onClick = onDismissButtonClicked) {
+                    Text(text = dismissButtonText)
                 }
             },
             content = {
-                DatePicker(
-                    state = state,
-                    dateValidator = {
-                        timestamp->
-                        val selectedDate = Instant.ofEpochMilli(timestamp)
-                            .atZone(ZoneId.systemDefault())
-                            .toLocalDate()
-                        val currentDate = LocalDate.now(ZoneId.systemDefault())
-                        selectedDate>=currentDate
-                    }
-                )
+                DatePicker(state = state) // Removed dateValidator
             }
         )
     }

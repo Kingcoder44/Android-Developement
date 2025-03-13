@@ -43,7 +43,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.bookbeacon.domain.model.Task
 import com.example.bookbeacon.subjects
+import com.example.bookbeacon.ui.presentation.Subject.SubjectVM
 import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.SubjectListBottomSheet
 import com.example.bookbeacon.ui.presentation.component.TaskCheckBox
@@ -66,6 +69,8 @@ data class TaskScreenNavArgs(
 fun TaskScreenRoute(
     navigator: DestinationsNavigator
 ){
+
+    val viewModel : TaskVM = hiltViewModel()
     TaskScreen(
         onBackButtonClick = {navigator.navigateUp()}
     )

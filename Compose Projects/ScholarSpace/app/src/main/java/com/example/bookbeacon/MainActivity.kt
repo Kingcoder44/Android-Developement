@@ -5,12 +5,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.graphics.toArgb
 import com.example.bookbeacon.domain.model.Subject
 import com.example.bookbeacon.domain.model.Task
 import com.example.bookbeacon.ui.presentation.NavGraphs
 import com.example.bookbeacon.ui.presentation.theme.StudySmartTheme
 import com.ramcosta.composedestinations.DestinationsNavHost
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +28,11 @@ class MainActivity : ComponentActivity() {
     }
 
 val subjects = listOf(
-    Subject(name = "English", goalHours = 10f, colors = Subject.subjectCardColors[0],0),
-    Subject(name = "Physics", goalHours = 10f, colors = Subject.subjectCardColors[1],0),
-    Subject(name = "Maths", goalHours = 10f, colors = Subject.subjectCardColors[2],0),
-    Subject(name = "Geology", goalHours = 10f, colors = Subject.subjectCardColors[3],0),
-    Subject(name = "Fine Arts", goalHours = 10f, colors = Subject.subjectCardColors[4],0)
+    Subject(name = "English", goalHours = 10f, colors = Subject.subjectCardColors[0].map { it.toArgb() },0),
+    Subject(name = "Physics", goalHours = 10f, colors = Subject.subjectCardColors[1].map { it.toArgb() },0),
+    Subject(name = "Maths", goalHours = 10f, colors = Subject.subjectCardColors[2].map { it.toArgb() },0),
+    Subject(name = "Geology", goalHours = 10f, colors = Subject.subjectCardColors[3].map { it.toArgb() },0),
+    Subject(name = "Fine Arts", goalHours = 10f, colors = Subject.subjectCardColors[4].map { it.toArgb() },0)
 )
 val tasks = listOf(
     Task(title = "Prepare Notes", desc = "", dueDate = 0L, priority = 0, relatedToSubject = "",

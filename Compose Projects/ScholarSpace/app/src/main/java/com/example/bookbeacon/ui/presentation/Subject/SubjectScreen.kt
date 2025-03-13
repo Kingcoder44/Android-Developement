@@ -41,6 +41,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.bookbeacon.domain.model.Subject
 import com.example.bookbeacon.tasks
 import com.example.bookbeacon.ui.presentation.component.AddSubjectDialog
@@ -63,6 +64,8 @@ fun SubjectScreenRoute(
     navigator: DestinationsNavigator
 )
 {
+
+    val viewModel : SubjectVM = hiltViewModel()
     SubjectScreen(
         onBackIconClicked = { navigator.navigateUp() },
         onAddTaskButtonClciked = {
