@@ -1,9 +1,11 @@
 package com.example.bookbeacon.data.Repos
 
 import com.example.bookbeacon.domain.model.Task
+import com.example.bookbeacon.tasks
 import com.example.studysmart.data.local.TaskDao
 import com.example.studysmart.domain.repository.TaskRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class TaskRepoImpli @Inject constructor(
@@ -22,14 +24,32 @@ class TaskRepoImpli @Inject constructor(
     }
 
     override fun getUpcomingTasksForSubject(subjectId: Int): Flow<List<Task>> {
-        TODO("Not yet implemented")
+       return taskDao.getTasksForSubject(subjectId).map {
+               tasks->tasks.filter { it.isComplete.not() }
+       }
+           .map{
+                   tasks->sortTask(tasks)
+           }
     }
 
     override fun getCompletedTasksForSubject(subjectId: Int): Flow<List<Task>> {
-        TODO("Not yet implemented")
+        return taskDao.getAllTasks().map {
+                tasks->tasks.filter { it.isComplete }
+        }
+            .map{
+                    tasks->sortTask(tasks)
+            }
     }
 
     override fun getAllUpcomingTasks(): Flow<List<Task>> {
-        TODO("Not yet implemented")
+        return taskDao.getAllTasks().map {
+            tasks->tasks.filter { it.isComplete.not() }
+        }
+            .map{
+                tasks->sortTask(tasks)
+            }
+    }
+    private fun sortTask(tasks : List<Task>) : List<Task>{
+        return tasks.sortedWith(compareBy<Task>{it.dueDate}.thenByDescending { it.priority })
     }
 }

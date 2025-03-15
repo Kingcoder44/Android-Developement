@@ -1,5 +1,6 @@
 package com.example.bookbeacon.util
 
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.ui.graphics.Color
 import com.example.bookbeacon.ui.presentation.theme.Green
 import com.example.bookbeacon.ui.presentation.theme.Orange
@@ -33,4 +34,13 @@ return date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))
 fun Long.toHours(): Float{
     val hours = this.toFloat() / 3600f
     return "%.2f".format(hours).toFloat()
+}
+
+sealed class SnackbarEvent{
+
+    data class ShowSnackBar(
+        val message : String,
+        val duaration : SnackbarDuration = SnackbarDuration.Short
+    ) :SnackbarEvent()
+ data object NavigateUp : SnackbarEvent()
 }
