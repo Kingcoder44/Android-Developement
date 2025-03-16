@@ -8,6 +8,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.bookbeacon.domain.model.Subject
+import com.example.bookbeacon.domain.model.Task
 import com.example.bookbeacon.domain.repository.SubjectRepository
 import com.example.bookbeacon.ui.presentation.navArgs
 import com.example.bookbeacon.util.SnackbarEvent
@@ -92,7 +93,10 @@ class SubjectVM @Inject constructor(
                     )
                 }
             }
-            is SubjectEvent.OnTaskIsCompleteChange -> TODO()
+            is SubjectEvent.OnTaskIsCompleteChange -> {
+
+                updateTask(event.task)
+            }
             SubjectEvent.UpdateProgress -> {
 
                 _state.update {
@@ -174,5 +178,31 @@ class SubjectVM @Inject constructor(
             }
         }
     }
+    private fun updateTask(task: Task) {
+        viewModelScope.launch {
+            try {
+                taskRepository.upsertTask(
+                    task = task.copy(isComplete = !task.isComplete)
+                )
+                if(task.isComplete)
+                {
+                    _snackbarEventFlow.emit(
+                        SnackbarEvent.ShowSnackBar(message = "Saved in upcoming tasks."))
 
+                }
+                else{
+
+                    _snackbarEventFlow.emit(
+                        SnackbarEvent.ShowSnackBar(message = "Saved in completed tasks."))
+                }
+            } catch (e: Exception) {
+                _snackbarEventFlow.emit(
+                    SnackbarEvent.ShowSnackBar(
+                        "Couldn't update task. ${e.message}",
+                        SnackbarDuration.Long
+                    )
+                )
+            }
+        }
+    }
 }

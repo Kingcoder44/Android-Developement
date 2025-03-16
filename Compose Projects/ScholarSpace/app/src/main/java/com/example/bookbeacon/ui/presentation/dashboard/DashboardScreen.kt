@@ -58,12 +58,14 @@
     import com.example.bookbeacon.util.SnackbarEvent
     import com.example.studysmart.presentation.components.SubjectCard
     import com.ramcosta.composedestinations.annotation.Destination
+    import com.ramcosta.composedestinations.annotation.RootNavGraph
     import com.ramcosta.composedestinations.navigation.DestinationsNavigator
     import kotlinx.coroutines.flow.SharedFlow
     import kotlinx.coroutines.flow.collect
     import kotlinx.coroutines.flow.collectLatest
 
-    @Destination(start = true)
+    @RootNavGraph(start = true)
+    @Destination
     @Composable
     fun DashBoardScreenRoute(
         navigator : DestinationsNavigator

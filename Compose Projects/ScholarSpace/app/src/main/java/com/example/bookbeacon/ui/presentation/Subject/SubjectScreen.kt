@@ -54,6 +54,7 @@ import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.studySessionsList
 import com.example.bookbeacon.ui.presentation.component.tasksList
 import com.example.bookbeacon.ui.presentation.destinations.TaskScreenRouteDestination
+import com.example.bookbeacon.ui.presentation.navArgs
 import com.example.bookbeacon.ui.presentation.task.TaskScreenNavArgs
 import com.example.bookbeacon.util.SnackbarEvent
 import com.ramcosta.composedestinations.annotation.Destination
@@ -83,7 +84,7 @@ fun SubjectScreenRoute(
         onAddTaskButtonClciked = {
             val navArg = TaskScreenNavArgs(
                 TaskId = null,
-                subjectId = -1
+                subjectId = state.currentSubjectId
             )
             navigator.navigate(TaskScreenRouteDestination(navArgs = navArg))
         },
@@ -301,7 +302,7 @@ private fun subjectOverviewSection(
         Spacer(Modifier.width(10.dp))
         CountCard(
             modifier = Modifier.weight(1f),
-            headingText = "Study Hours",
+            headingText = "Studied Hours",
             count = studiedHours
         )
         Spacer(Modifier.width(10.dp))

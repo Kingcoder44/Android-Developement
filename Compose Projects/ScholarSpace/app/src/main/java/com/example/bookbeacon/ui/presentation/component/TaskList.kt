@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.example.bookbeacon.R
 import com.example.bookbeacon.domain.model.Task
 import com.example.bookbeacon.util.Priority
+import com.example.bookbeacon.util.changeMillisToDateString
 
 fun LazyListScope.tasksList(
     sectionTitle : String,
@@ -108,7 +109,7 @@ private fun TaskCard(
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = "${task.dueDate}",
+                    text = task.dueDate.changeMillisToDateString(),
                     style = MaterialTheme.typography.bodySmall
                 )
             }
