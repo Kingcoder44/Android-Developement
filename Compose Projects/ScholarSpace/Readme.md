@@ -2,7 +2,6 @@
 
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-%23007ACC.svg?style=for-the-badge&logo=jetpackcompose&logoColor=white)  
 ![Dagger Hilt](https://img.shields.io/badge/Dagger%20Hilt-%23F7941D.svg?style=for-the-badge&logo=dagger&logoColor=white)  
-![License](https://img.shields.io/github/license/Kingcoder44/Android-Developement?style=for-the-badge)  
 
 ---
 
@@ -32,7 +31,7 @@ ScholarSpace is an educational productivity app designed to help students manage
 ---
 
 ## 📥 Download APK  
-👉 [Download Latest ScholarSpace APK](https://github.com/Kingcoder44/Android-Developement/releases/latest)  
+👉 [Download Latest ScholarSpace APK](https://github.com/Kingcoder44/Android-Developement/releases/tag/scholarspace-v1.0)  
 
 ---
 
