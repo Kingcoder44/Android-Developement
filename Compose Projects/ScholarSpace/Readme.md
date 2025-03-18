@@ -1,12 +1,16 @@
 # 📚 ScholarSpace — Your Smart Study Companion  
 
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-%23007ACC.svg?style=for-the-badge&logo=jetpackcompose&logoColor=white)  
-![Dagger Hilt](https://img.shields.io/badge/Dagger%20Hilt-%23F7941D.svg?style=for-the-badge&logo=dagger&logoColor=white)  
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-%23007ACC.svg?style=for-the-badge&logo=jetpackcompose&logoColor=white) 
+![Dagger Hilt](https://img.shields.io/badge/Dagger%20Hilt-%23F7941D.svg?style=for-the-badge&logo=dagger&logoColor=white) 
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)  
-![Room Database](https://img.shields.io/badge/Room-DB-orange?style=for-the-badge)  
-![MVVM Architecture](https://img.shields.io/badge/MVVM-Architecture-blueviolet?style=for-the-badge)  
+
+![Room Database](https://img.shields.io/badge/Room-DB-orange?style=for-the-badge) 
+![MVVM Architecture](https://img.shields.io/badge/MVVM-Architecture-blueviolet?style=for-the-badge) 
 ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)  
-![Material Design 3](https://img.shields.io/badge/Material%20Design%203-757575?style=for-the-badge&logo=materialdesign&logoColor=white)  
+
+![Material Design 3](https://img.shields.io/badge/Material%20Design%203-757575?style=for-the-badge&logo=materialdesign&logoColor=white) 
+
+
 
 ---
 
