@@ -31,7 +31,7 @@ ScholarSpace is an educational productivity app designed to help students manage
 ---
 
 ## 📥 Download APK  
-👉 [Download Latest ScholarSpace APK](https://github.com/Kingcoder44/Android-Developement/releases/tag/scholarspace-v1.0)  
+👉 [Download Latest ScholarSpace APK](https://github.com/Kingcoder44/Android-Developement/releases/tag/v1.0-ScholarSpace)  
 
 ---
 
