@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.bookbeacon.domain.model.Task
 import com.example.bookbeacon.domain.repository.SubjectRepository
 import com.example.bookbeacon.ui.presentation.navArgs
-import com.example.bookbeacon.util.Priority
-import com.example.bookbeacon.util.SnackbarEvent
+import com.example.scholar_space.util.Priority
+import com.example.scholar_space.util.SnackbarEvent
 import com.example.studysmart.domain.repository.TaskRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

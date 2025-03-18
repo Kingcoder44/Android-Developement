@@ -1,7 +1,7 @@
 package com.example.bookbeacon.ui.presentation.task
 
 import com.example.bookbeacon.domain.model.Subject
-import com.example.bookbeacon.util.Priority
+import com.example.scholar_space.util.Priority
 
 sealed class TaskEvent {
     data class OnTitleChange(val title: String) : TaskEvent()

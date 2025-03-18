@@ -1,4 +1,4 @@
-package com.example.bookbeacon
+package com.example.scholar_space
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -8,8 +8,8 @@ import com.example.bookbeacon.domain.model.Session
 import com.example.bookbeacon.domain.model.Subject
 import com.example.bookbeacon.domain.model.Task
 import com.example.bookbeacon.domain.repository.SubjectRepository
-import com.example.bookbeacon.util.SnackbarEvent
-import com.example.bookbeacon.util.toHours
+import com.example.scholar_space.util.SnackbarEvent
+import com.example.scholar_space.util.toHours
 import com.example.studysmart.domain.repository.SessionRepository
 import com.example.studysmart.domain.repository.TaskRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

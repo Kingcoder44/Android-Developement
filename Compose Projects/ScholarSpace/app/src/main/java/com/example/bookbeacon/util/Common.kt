@@ -1,4 +1,4 @@
-package com.example.bookbeacon.util
+package com.example.scholar_space.util
 
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.ui.graphics.Color
@@ -28,7 +28,7 @@ fun Long?.changeMillisToDateString() : String{
             .atZone(ZoneId.systemDefault())
             .toLocalDate()
     }?: LocalDate.now()
-return date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))
+    return date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))
 }
 
 fun Long.toHours(): Float{
@@ -42,5 +42,9 @@ sealed class SnackbarEvent{
         val message : String,
         val duaration : SnackbarDuration = SnackbarDuration.Short
     ) :SnackbarEvent()
- data object NavigateUp : SnackbarEvent()
+    data object NavigateUp : SnackbarEvent()
+}
+
+fun Int.pad() : String{
+    return this.toString().padStart(length = 2, padChar = '0')
 }

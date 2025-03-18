@@ -27,8 +27,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.bookbeacon.R
 import com.example.bookbeacon.domain.model.Task
-import com.example.bookbeacon.util.Priority
-import com.example.bookbeacon.util.changeMillisToDateString
+import com.example.scholar_space.util.Priority
+import com.example.scholar_space.util.changeMillisToDateString
 
 fun LazyListScope.tasksList(
     sectionTitle : String,

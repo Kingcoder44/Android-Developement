@@ -20,7 +20,6 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
-
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
@@ -46,17 +45,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.bookbeacon.domain.model.Subject
-import com.example.bookbeacon.tasks
 import com.example.bookbeacon.ui.presentation.component.AddSubjectDialog
 import com.example.bookbeacon.ui.presentation.component.CountCard
 import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.studySessionsList
 import com.example.bookbeacon.ui.presentation.component.tasksList
 import com.example.bookbeacon.ui.presentation.destinations.TaskScreenRouteDestination
-import com.example.bookbeacon.ui.presentation.navArgs
 import com.example.bookbeacon.ui.presentation.task.TaskScreenNavArgs
-import com.example.bookbeacon.util.SnackbarEvent
+import com.example.scholar_space.util.SnackbarEvent
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.SharedFlow

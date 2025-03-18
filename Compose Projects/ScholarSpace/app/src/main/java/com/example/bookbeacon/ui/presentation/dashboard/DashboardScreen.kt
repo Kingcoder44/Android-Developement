@@ -55,7 +55,7 @@
     import com.example.bookbeacon.ui.presentation.destinations.SubjectScreenRouteDestination
     import com.example.bookbeacon.ui.presentation.destinations.TaskScreenRouteDestination
     import com.example.bookbeacon.ui.presentation.task.TaskScreenNavArgs
-    import com.example.bookbeacon.util.SnackbarEvent
+    import com.example.scholar_space.util.SnackbarEvent
     import com.example.studysmart.presentation.components.SubjectCard
     import com.ramcosta.composedestinations.annotation.Destination
     import com.ramcosta.composedestinations.annotation.RootNavGraph

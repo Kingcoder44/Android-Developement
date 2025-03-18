@@ -49,16 +49,17 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.bookbeacon.domain.model.Task
-import com.example.bookbeacon.subjects
 import com.example.bookbeacon.ui.presentation.Subject.SubjectVM
 import com.example.bookbeacon.ui.presentation.component.DeleteDialog
 import com.example.bookbeacon.ui.presentation.component.SubjectListBottomSheet
 import com.example.bookbeacon.ui.presentation.component.TaskCheckBox
 import com.example.bookbeacon.ui.presentation.component.TaskDatePicker
 import com.example.bookbeacon.ui.presentation.theme.Red
-import com.example.bookbeacon.util.Priority
-import com.example.bookbeacon.util.SnackbarEvent
-import com.example.bookbeacon.util.changeMillisToDateString
+import com.example.scholar_space.util.Priority
+import com.example.scholar_space.util.SnackbarEvent
+import com.example.scholar_space.util.changeMillisToDateString
+
+
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.SharedFlow
