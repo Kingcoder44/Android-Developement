@@ -20,11 +20,13 @@ ScholarSpace is an educational productivity app designed to help students manage
 ---
 
 ## 🎯 Key Features  
-- 📊 **Dashboard Screen**: View tasks, upcoming study sessions, and productivity stats at a glance.  
-- 🗂️ **Add Subject Cards**: Organize your subjects with beautiful cards and easily add new ones.  
-- ✅ **Subject-Specific Task Management**: Add and manage tasks for each subject based on priority (High/Medium/Low).  
-- ⏱️ **Study Session Timer**: Focus and manage your time with an integrated study timer.  
-- ✍️ **Compose-Based Modern UI**: Responsive, fluid interface built entirely with Jetpack Compose.  
+- 📚 **Add Subjects** — Organize your subjects with colorful, customizable subject cards.  
+- ✅ **Add Tasks & Set Priorities** — Stay on top of your assignments and tasks with priority-based organization.  
+- ⏳ **Study Session Timer** — Focus mode with a built-in study timer.  
+- 📊 **Dashboard Overview** — Get an easy-to-understand overview of pending tasks, completed tasks, and total study time.  
+- 🎯 **Set Study Goals** — Define and track weekly or monthly study hour goals.  
+- ⏱️ **Track Studied Hours** — Automatically keep track of your study time — both subject-wise and overall.   
+- 💡 **Clean Architecture (MVVM)** — Smooth experience with modern Android best practices.  
 
 ---
 
